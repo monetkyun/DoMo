@@ -1,175 +1,27 @@
-/* Apply font to the whole page */
+/* GLOBAL STYLES */
 body {
-    font-family: 'Playpen Sans', sans-serif;
-    margin: 0;
-    background: #fffafc;
-    color: #333;
-    padding: 20px;
-  }
-  
-  /* Optional: specify font weights with classes */
-  .playpen-sans-regular {
-    font-weight: 400;
-  }
-  
-  .playpen-sans-bold {
-    font-weight: 700;
-  }
-  
-  .section {
-    padding: 100px 20px;
-    text-align: center;
-  }
-  
-  #main-letter {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background: #ffeef2;
-  }
-  
-  .letter {
-    max-width: 600px;
-    padding: 20px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  }
-  
-  .scroll-down {
-    font-size: 2rem;
-    margin-top: 20px;
-    cursor: pointer;
-    animation: bounce 2s infinite;
-  }
-  
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(10px); }
-  }
-  
-  #mini-letters {
-    background: #fff0f5;
-  }
-  
-
-
-
-
-.letter-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);  /* 👈 4 columns */
-  gap: 20px;                              /* space between letters */
-  padding: 20px;
-  max-width: 1000px;                      /* optional: to keep layout nice */
-  margin: 0 auto;                         /* center the grid */
-}
-
-  .mini-letter {
-    font-size: 2rem;
-    cursor: pointer;
-    padding: 20px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.2s;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .mini-letter:hover {
-    transform: scale(1.05);
-  }
-
-  
-  .letter-label {
-    margin-top: 8px;
-    font-size: 14px;
-    color: #333;
-  }
-  
-  .popup {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-  }
-  
-  .popup-content {
-    background: none;
-    padding: 30px;
-    border-radius: 12px;
-    max-width: 600px;
-    text-align: center;
-    transform: scale(0.95);
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    opacity: 1;
-    
-  }
-  
-  .popup.hidden {
-    display: none;
-  }
-  
-  button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: none;
-    background: #ff7a94;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-
-
-
-  .letter-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
-
-  }
-  
-  .mini-letter {
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-    border-radius: 12px;
-    overflow: hidden;
-    background-color: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .mini-letter img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .mini-letter:hover {
-    transform: scale(1.05);
-  }
-  
-  body {
   font-family: 'Playpen Sans', sans-serif;
   background: #fffafc;
+  color: #333;
   margin: 0;
-  padding: 0;
+  padding: 20px;
   text-align: center;
 }
 
+.hidden {
+  display: none;
+}
+
+/* FONT CLASSES */
+.playpen-sans-regular {
+  font-weight: 400;
+}
+
+.playpen-sans-bold {
+  font-weight: 700;
+}
+
+/* LANDING PAGE GATE */
 .gate-container {
   display: flex;
   flex-direction: column;
@@ -184,6 +36,8 @@ input {
   border-radius: 10px;
   border: 2px solid #ccc;
   font-size: 16px;
+  width: 100%;
+  max-width: 300px;
 }
 
 button {
@@ -199,13 +53,146 @@ button:hover {
   background: #ff8fa3;
 }
 
-.hidden {
-  display: none;
-}
-
 #errorMsg {
   color: red;
   font-weight: bold;
 }
 
+/* SECTION STYLES */
+.section {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+#main-letter {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #ffeef2;
+}
+
+.letter {
+  max-width: 600px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* SCROLL ARROW */
+.scroll-down {
+  font-size: 2rem;
+  margin-top: 20px;
+  cursor: pointer;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+/* MINI LETTER GRID */
+#mini-letters {
+  background: #fff0f5;
+}
+
+.letter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+}
+
+/* MINI LETTER STYLES */
+.mini-letter {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mini-letter:hover {
+  transform: scale(1.05);
+}
+
+.mini-letter img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.letter-label {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* POPUP */
+.popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.popup.hidden {
+  display: none;
+}
+
+.popup-content {
+  background: none;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  text-align: center;
+  transform: scale(0.95);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+}
+
+.popup-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .letter {
+    padding: 15px;
   }
+
+  input,
+  button {
+    width: 90%;
+    font-size: 1rem;
+  }
+
+  .mini-letter {
+    width: 80px;
+    height: 80px;
+  }
+
+  .scroll-down {
+    font-size: 1.5rem;
+  }
+}
