@@ -16,7 +16,9 @@
   <script>
     function checkName() {
       const input = document.getElementById('nameInput').value.trim().toLowerCase();
-      if (input === "Dominik") {
+      const errorMsg = document.getElementById('errorMsg');
+
+      if (input === "dominik") {
         window.location.href = "anniversary.html"; // 🎯 redirect
       } else {
         document.getElementById('errorMsg').classList.remove('hidden');
@@ -28,5 +30,3 @@
   </script>
 </body>
 </html>
-
-window.location.href = "actualpage.html";
