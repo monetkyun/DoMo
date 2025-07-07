@@ -112,18 +112,19 @@ box-sizing: border-box;
 
 /* MINI LETTER STYLES */
 .mini-letter {
-  width: 100px;
-  aspect-ratio: 1 / 1;
-  cursor: pointer;
-  box-sizing: border-box;
-  overflow: visible;
-  background-color: white;
+  width: 120px; /* fixed width for consistency */
+  padding: 10px;
+  background: white;
+  border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  overflow: visible; /* so labels don’t get cut */
+  transition: transform 0.2s;
 }
 
 .mini-letter:hover {
@@ -132,22 +133,22 @@ box-sizing: border-box;
 
 .mini-letter img {
   max-width: 100%;
-  max-height: 100%;
-  width: auto;
   height: auto;
   object-fit: contain;
   display: block;
+  margin-bottom: 8px;
 }
 
 .letter-label {
-  margin-top: 6px;
   font-size: 14px;
   color: #333;
-  white-space: nowrap; /* prevents label text from wrapping */
-  overflow: hidden;
-  text-overflow: ellipsis; /* truncates long text with ... */
+  text-align: center;
+  word-break: break-word; /* wrap long labels */
   max-width: 100%;
+  white-space: normal; /* allow wrapping */
+  overflow: visible;
 }
+
 
 /* POPUP */
 .popup {
@@ -189,11 +190,12 @@ box-sizing: border-box;
 /* RESPONSIVE */
 @media (max-width: 600px) {
 
-    .letter-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 16px 12px;
+  .letter-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 16px;
+    padding: 10px;
   }
-
+  
   .letter {
     padding: 15px;
     margin: 10px;
