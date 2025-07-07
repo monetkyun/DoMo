@@ -65,12 +65,15 @@ button:hover {
 }
 
 #main-letter {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   background: #ffeef2;
+  padding: 60px 20px;
+box-sizing: border-box;
+
 }
 
 .letter {
