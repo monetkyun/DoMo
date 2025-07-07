@@ -113,6 +113,7 @@ box-sizing: border-box;
 /* MINI LETTER STYLES */
 .mini-letter {
   width: 120px; /* fixed width for consistency */
+  min-height: 140px; /* 💡 ensures room for image + label */
   padding: 10px;
   background: white;
   border-radius: 12px;
@@ -123,7 +124,7 @@ box-sizing: border-box;
   align-items: center;
   justify-content: flex-start;
   box-sizing: border-box;
-  overflow: visible; /* so labels don’t get cut */
+  overflow: hidden; /* so labels don’t get cut */
   transition: transform 0.2s;
 }
 
@@ -143,10 +144,11 @@ box-sizing: border-box;
   font-size: 14px;
   color: #333;
   text-align: center;
-  word-break: break-word; /* wrap long labels */
+  word-break: break-word;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
   max-width: 100%;
-  white-space: normal; /* allow wrapping */
-  overflow: visible;
 }
 
 
