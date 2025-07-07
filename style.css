@@ -1,3 +1,10 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  min-width: 0; /* 💥 Stops label from pushing box width/overflow */
+}
+
 /* GLOBAL STYLES */
 body {
   font-family: 'Playpen Sans', sans-serif;
@@ -130,6 +137,7 @@ box-sizing: border-box;
   transition: transform 0.2s;
 
   /* 🚨 THIS IS THE KEY */
+  overflow: visible;
   height: auto;
   min-height: 180px; /* ensures it’s tall enough for long labels */
 }
@@ -145,14 +153,17 @@ box-sizing: border-box;
 .letter-label {
   font-size: 14px;
   color: #333;
+  text-align: center;
   word-break: break-word;
   white-space: normal;
-  overflow-wrap: break-word;
   line-height: 1.4;
   width: 100%;
-
-  /* 🚨 Most important: allow text to wrap naturally and stay inside */
   flex-shrink: 0;
+  overflow-wrap: break-word;
+
+  /* 💥 Tell Chrome to let this grow properly */
+  display: block;
+  max-width: 100%;
 }
 
 
