@@ -112,8 +112,8 @@ box-sizing: border-box;
 
 /* MINI LETTER STYLES */
 .mini-letter {
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
   cursor: pointer;
   border-radius: 12px;
   overflow: hidden;
