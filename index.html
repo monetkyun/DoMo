@@ -13,17 +13,21 @@
     <p id="errorMsg" class="hidden">Dude this is not for you get the fuck off</p>
   </div>
 
-  
   <script>
-    document.getElementById('submitBtn').addEventListener('click', function () {
-      const name = document.getElementById("nameInput").value.trim().toLowerCase();
+    document.addEventListener("DOMContentLoaded", () => {
+      const button = document.getElementById("submitBtn");
+      const input = document.getElementById("nameInput");
       const errorMsg = document.getElementById("errorMsg");
 
-      if (name === "dominik") {
-        window.location.href = "actualpage.html";
-      } else {
-        errorMsg.classList.remove("hidden");
-      }
+      button.addEventListener("click", () => {
+        const name = input.value.trim().toLowerCase();
+
+        if (name === "owyn") {
+          window.location.href = "actualpage.html";
+        } else {
+          errorMsg.classList.remove("hidden");
+        }
+      });
     });
   </script>
 </body>
