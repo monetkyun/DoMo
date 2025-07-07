@@ -43,5 +43,5 @@ document.querySelector('.scroll-down').addEventListener('click', () => {
   }
 
   if (input === "Dominik") {
-  window.location.href = "anniversary.html";
+  window.location.href = "actualpage.html";
 }
