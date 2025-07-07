@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>REVEAL YOURSELF</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="gate-container">
+    <h1>What's your name, kind sir?</h1>
+    <input type="text" id="nameInput" placeholder="Enter your name..." />
+    <button onclick="checkName()">Enter</button>
+    <p id="errorMsg" class="hidden">Dude this is not for you get the fuck off</p>
+  </div>
+
+  <script>
+    function checkName() {
+      const input = document.getElementById('nameInput').value.trim().toLowerCase();
+      if (input === "Dominik") {
+        window.location.href = "anniversary.html"; // 🎯 redirect
+      } else {
+        document.getElementById('errorMsg').classList.remove('hidden');
+      }
+    }
+    
+    <link rel="stylesheet" href="style.css" />
+
+  </script>
+</body>
+</html>
