@@ -171,20 +171,30 @@ button:hover {
 .popup-content img {
   max-width: 100%;
   height: auto;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  display: block;
+  margin: 0 auto;
 }
+
 
 /* RESPONSIVE */
 @media (max-width: 600px) {
   .letter {
     padding: 15px;
+    margin: 10px;
   }
 
-  input,
-  button {
-    width: 90%;
-    font-size: 1rem;
+  #main-letter {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .gate-container {
+    padding: 20px;
+  }
+
+  .popup-content {
+    padding: 15px;
+    max-width: 95%;
   }
 
   .mini-letter {
@@ -194,5 +204,10 @@ button:hover {
 
   .scroll-down {
     font-size: 1.5rem;
+  }
+
+  input,
+  button {
+    width: 90%;
   }
 }
