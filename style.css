@@ -105,7 +105,7 @@ box-sizing: border-box;
 .letter-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
+  gap: 16px 20px;
   padding: 20px;
   justify-items: center;
 }
@@ -131,15 +131,22 @@ box-sizing: border-box;
 }
 
 .mini-letter img {
-  width: 90%;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
   height: auto;
   object-fit: contain;
+  display: block;
 }
 
 .letter-label {
-  margin-top: 8px;
+  margin-top: 6px;
   font-size: 14px;
   color: #333;
+  white-space: nowrap; /* prevents label text from wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* truncates long text with ... */
+  max-width: 100%;
 }
 
 /* POPUP */
@@ -181,6 +188,12 @@ box-sizing: border-box;
 
 /* RESPONSIVE */
 @media (max-width: 600px) {
+
+    .letter-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 16px 12px;
+  }
+
   .letter {
     padding: 15px;
     margin: 10px;
@@ -212,7 +225,7 @@ box-sizing: border-box;
     height: auto;
     object-fit: contain;
   }
-  
+
   .scroll-down {
     font-size: 1.5rem;
   }
