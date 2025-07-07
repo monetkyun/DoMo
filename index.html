@@ -9,24 +9,22 @@
   <div class="gate-container">
     <h1>What's your name, kind sir?</h1>
     <input type="text" id="nameInput" placeholder="Enter your name..." />
-    <button onclick="checkName()">Enter</button>
+    <button id="submitBtn">Enter</button>
     <p id="errorMsg" class="hidden">Dude this is not for you get the fuck off</p>
   </div>
 
+  
   <script>
-    function checkName() {
-      const input = document.getElementById('nameInput').value.trim().toLowerCase();
-      const errorMsg = document.getElementById('errorMsg');
+    document.getElementById('submitBtn').addEventListener('click', function () {
+      const name = document.getElementById("nameInput").value.trim().toLowerCase();
+      const errorMsg = document.getElementById("errorMsg");
 
-      if (input === "dominik") {
-        window.location.href = "anniversary.html"; // 🎯 redirect
+      if (name === "Dominik") {
+        window.location.href = "actualpage.html";
       } else {
-        document.getElementById('errorMsg').classList.remove('hidden');
+        errorMsg.classList.remove("hidden");
       }
-    }
-    
-    <link rel="stylesheet" href="style.css" />
-
+    });
   </script>
 </body>
 </html>

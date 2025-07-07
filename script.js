@@ -42,6 +42,3 @@ document.querySelector('.scroll-down').addEventListener('click', () => {
     document.getElementById('popup').classList.add('hidden');
   }
 
-  if (input === "Dominik") {
-  window.location.href = "actualpage.html";
-}
