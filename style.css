@@ -135,7 +135,7 @@ box-sizing: border-box;
   text-align: center;
   word-break: break-word;
   white-space: normal;
-  overflow: visible;
+  overflow: hidden;
   padding: 4px 8px;
   line-height: 1.2;
 }
